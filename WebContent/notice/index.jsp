@@ -43,7 +43,7 @@
     		
     		<%--slide end --%>
 			<div class="text-center">
-			<button type="button" href="list.jsp" class="btn btn-secondary btn-lg">START</button>
+			<a class="btn btn-secondary" href="list.jsp" role="button">START</a>
 			</div>
     	</div>
     </div>
