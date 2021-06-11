@@ -22,13 +22,13 @@
 				  </ol>
 				  <div class="carousel-inner">
 				    <div class="carousel-item active">
-				      <img src= "/image/다운로드.jpeg" class="d-block w-100" alt="...">
+				      <img src= "/notice/공원1.jpg" class="d-block w-100" alt="...">
 				    </div>
 				    <div class="carousel-item">
-				      <img src="/image/다운로드.jpeg" class="d-block w-100" alt="...">
+				      <img src="/notice/공원1.jpg" class="d-block w-100" alt="...">
 				    </div>
 				    <div class="carousel-item">
-				      <img src="/image/다운로드.jpeg" class="d-block w-100" alt="...">
+				      <img src="/notice/공원1.jpg" class="d-block w-100" alt="...">
 				    </div>
 				  </div>
 				  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -42,8 +42,8 @@
 				</div>
     		
     		<%--slide end --%>
-			<div class="text-center">
-			<a class="btn btn-secondary" href="list.jsp" role="button">START</a>
+			<div class="text-center" style="margin:20px 0 0 0">
+			<a class="btn btn-secondary" href="main.jsp" role="button">Let's START</a>
 			</div>
     	</div>
     </div>

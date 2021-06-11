@@ -1,25 +1,12 @@
 <!-- step01_grid_lg.html -->
 <%@page pageEncoding="utf-8" %>
-<%@include file="../inc/header.jsp" %>
-<%	
-String tempPage = request.getParameter("page");
-String tempNum = request.getParameter("num");
-int cPage = 0;
-if(tempPage == null || tempPage.length()==0){
-	cPage = 1;
-}
-try{
-	cPage = Integer.parseInt(tempPage);
-}catch(NumberFormatException e){
-	cPage = 1;
-}
-%>
+<%@include file="../pinc/header.jsp" %>
   <!-- breadcrumb start -->
 
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="/notice/index.jsp">홈</a></li>
-    <li class="breadcrumb-item"><a href="/notice/list.jsp">공지사항</a></li>
+    <li class="breadcrumb-item"><a href="/project/index.jsp">홈</a></li>
+    <li class="breadcrumb-item"><a href="/project/list.jsp">공지사항</a></li>
   </ol>
 </nav>
   
@@ -52,7 +39,7 @@ try{
     		
     		<%--form end --%>
     		<div class="text-right">
-			<a class="btn btn-outline-secondary" href="list.jsp?page=<%=cPage %>" role="button">리스트</a>
+			<a class="btn btn-outline-secondary" href="list.jsp" role="button">리스트</a>
 			<a class="btn btn-outline-success" id="saveNotice" role="button">저장</a>
 			</div>
 			
@@ -63,11 +50,11 @@ try{
     </div>
   <!-- container end -->
   <script>
-  	$(function() {
+	$(function() {
 		$('#saveNotice').click(function(){
-			noticeForm.submit();
-		});
-	});
-	</script>
-<%@include file="../inc/footer.jsp" %>
+			noticeForm.submit
+		})
+	})
+</script>
+<%@include file="../pinc/footer.jsp" %>
   
