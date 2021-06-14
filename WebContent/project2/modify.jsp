@@ -2,7 +2,7 @@
 <%@page import="kr.or.kpc.dto.NoticeDto"%>
 <%@page import="kr.or.kpc.dao.NoticeDao"%>
 <%@page pageEncoding="utf-8" %>
-<%@include file="header.jsp" %>
+<%@include file="../inc/header.jsp" %>
 
 <%
 	String tempPage = request.getParameter("page");
@@ -42,27 +42,9 @@
 		location.href="view.jsp?num=<%=num%>&page=<%=cPage%>";
 	</script>
 <%}%>
-  	<!-- breadcrumb start -->
 
-  	
-  	<nav aria-label="breadcrumb">
-	 <ol class="breadcrumb" style="background-color: green">
-    <li class="breadcrumb-item"><a href="/project/index.jsp" style="color:white">Home ></a></li>
-    <li class="breadcrumb-item"><a href="/project/index.jsp" style="color:white">Notice </a></li>
-	  </ol>
-	</nav>
-	<!-- breadcrumb end -->
-  	
-  	<!-- container start -->
-	<div class="container">
-		<!-- col start -->
-		<div class="row">
-				<h1></h1>
-			</div>
-		</div>
-		<!-- col end -->
-		<link rel="preconnect" href="https://fonts.gstatic.com">
-	
+  <!-- breadcrumb start -->
+
 	<!-- container end -->
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com">
@@ -128,6 +110,9 @@
 		
 		</style>	
 	
+	<!-- breadcrumb end -->
+  
+  <!-- breadcrumb end -->
   <!-- container start -->
     <div class="container">
     	
@@ -176,4 +161,4 @@
 	  
   });
   </script>
-<%@include file="footer.jsp" %>
+<%@include file="../inc/footer.jsp" %>

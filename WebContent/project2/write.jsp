@@ -1,6 +1,6 @@
 <!-- step01_grid_lg.html -->
 <%@page pageEncoding="utf-8" %>
-<%@include file="header.jsp" %>
+<%@include file="../pinc/header.jsp" %>
 <%	
 String tempPage = request.getParameter("page");
 String tempNum = request.getParameter("num");
@@ -18,8 +18,8 @@ try{
 
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="/notice/index.jsp">홈</a></li>
-    <li class="breadcrumb-item"><a href="/notice/list.jsp">공지사항</a></li>
+    <li class="breadcrumb-item"><a href="/project/index.jsp">홈</a></li>
+    <li class="breadcrumb-item"><a href="/project/list.jsp">공지사항</a></li>
   </ol>
 </nav>
   
@@ -69,5 +69,5 @@ try{
 		});
 	});
 	</script>
-<%@include file="footer.jsp" %>
+<%@include file="../pinc/footer.jsp" %>
   

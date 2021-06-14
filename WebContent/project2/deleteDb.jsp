@@ -1,6 +1,6 @@
 <%@page import="kr.or.kpc.dto.NoticeDto"%>
 <%@page import="kr.or.kpc.dao.NoticeDao"%>
-<%@ page pageEncoding="utf-8"%>1
+<%@ page pageEncoding="utf-8"%>
 <%
 	
 	String tempPage = request.getParameter("page");

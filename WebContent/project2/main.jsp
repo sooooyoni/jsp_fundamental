@@ -25,9 +25,18 @@
     		 <div class="main2" style="width:300px; margin : 20px;">
     		<form name="noticeForm" method="post" action="saveDb.jsp">
 			  <form>
-				  <div class="form-group ">
-				    <label for="years">나이</label>
-				    <input type="years" class="form-control" id="years" aria-describedby="years">
+				    <div class="form-group">
+				    <label for="years">연령대</label>
+				    <select class="form-control" id="years">
+				      <option>10</option>
+				      <option>20</option>
+				      <option>30</option>
+				      <option>40</option>
+				      <option>50</option>
+				      <option>60</option>
+				      <option>70</option>
+				      <option>80</option>
+				    </select>
 				  </div>
 				  <div class="form-group">
 				    <label for="addr">위치</label>

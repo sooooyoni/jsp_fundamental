@@ -81,7 +81,7 @@
 	  transition: 0.3s;
 	}
 	
-	nav a: hover {
+	nav a:hover {
 	  color: #B8B8B8;
 	}
 	
@@ -125,7 +125,7 @@
 	
 	}
 	
-	h5{
+	h3{
 	font-family: 'Gaegu', cursive;
 	}
 </style>
@@ -137,14 +137,14 @@
       <ul>
         <li><a href="/project/program.jsp">Park Recommendation?</a></li>
         <li><a href="/project/park.jsp">Program</a></li>
-         <li><a href="/project/list.jsp">Notice</a></li>
+         <li><a href="/notice/list.jsp">Notice</a></li>
         <li class="nav-item dropdown">
 	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	         Exercise
 	        </a>
 	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-	          <a class="dropdown-item" href="/project/upper.jsp">상체운동</a>
-	          <a class="dropdown-item" href="/project/lower.jsp">하체운동</a>
+	          <a class="dropdown-item" href="upper.jsp">상체운동</a>
+	          <a class="dropdown-item" href="down.jsp">하체운동</a>
 	          <div class="dropdown-divider"></div>
       		</div>
 		<!-- navbar end -->    

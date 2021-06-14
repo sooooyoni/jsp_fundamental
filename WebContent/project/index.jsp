@@ -1,10 +1,22 @@
 <!-- step01_grid_lg.html -->
 <%@page pageEncoding="utf-8" %>
-<%@include file="../pinc/header.jsp" %>
+<%@include file="header.jsp" %>
   <!-- breadcrumb start -->
+  <style>
+.breadcrumb-item{
+color: white;
+font-family:fantasy;
+font-size: 20px;
+}
+</style>
 
 
-  
+<nav aria-label="breadcrumb" >
+  <ol class="breadcrumb" style="background-color: green">
+    <li class="breadcrumb-item"><a href="index.jsp" style="color:white">Home ></a></li>
+    <li class="breadcrumb-item">Program</li>
+  </ol>
+</nav>
   <!-- breadcrumb end -->
   <!-- container start -->
     <div class="container">
@@ -17,7 +29,7 @@
     	
     			
 				<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="height :550px; width : 900px; margin : 0 auto;">
-					<h1>Hello!</h1>
+					<h1>.</h1>
 				  <ol class="carousel-indicators">
 				    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
 				    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -25,13 +37,13 @@
 				  </ol>
 				  <div class="carousel-inner" style="height :500px; width : 900px">
 				    <div class="carousel-item active">
-				      <img src= "/project/공원1.jpg" class="d-block w-100"  >
+				      <img src= "https://i.ibb.co/zRxYTQN/image.jpg" class="d-block w-100"  >
 				    </div>
 				    <div class="carousel-item"style="height :500px; width : 900px; margin : 0 auto;">
-				      <img src="/project/운동1.gif" class="d-block w-100" >
+				      <img src="https://images.wsj.net/im-335891?width=1260&size=custom_1280x853" class="d-block w-100" >
 				    </div>
 				    <div class="carousel-item"style="height :500px; width : 900px">
-				      <img src="/project/운동2.jpeg" class="d-block w-100">
+				      <img src="https://i.ibb.co/LC3Ymkf/1.jpg" class="d-block w-100">
 				    </div>
 				  </div>
 				  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -46,12 +58,11 @@
     	
     		<%--slide end --%>
 			<div class="text-center" style="margin:20px 0 0 0">
-			<a class="btn btn-secondary" href="main.jsp" role="button">Let's START</a>
+			<a class="btn btn-secondary" href="park.jsp" role="button">Let's START</a>
 			</div>
     	</div>
     </div>
   <!-- col end -->
     </div>
   <!-- container end -->
-<%@include file="../pinc/footer.jsp" %>
-  
+<%@include file="footer.jsp" %>

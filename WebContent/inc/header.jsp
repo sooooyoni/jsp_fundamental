@@ -17,26 +17,33 @@
   </head>
   <body>
   	<!-- navbar start -->
-  	<nav class="navbar navbar-expand-md navbar-dark" style="background-color : rgb(250, 100, 93)">
+  	<nav class="navbar navbar-expand-md navbar-dark" style="background-color : rgb(250, 195, 93)">
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
+	  
+	  <%
+	  String path = request.getRequestURI();
+	  %>
 	
 	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 	    <ul class="navbar-nav mr-auto">
 	    
-	      <li class="nav-item ">
+	      <li class="nav-item <%if(path!=null&&path.startsWith("/index.jsp")){%>active<%}%>">
 	        <a class="nav-link" href="/notice/index.jsp">Home <span class="sr-only">(current)</span></a>
 	      </li>
 	      
-	      <li class="nav-item active">
-	        <a class="nav-link" href="/notice/list.jsp">공지사항</a>
-	      </li>
 	      
-	      <li class="nav-item">
+	      <li class="nav-item <%if(path!=null&&path.startsWith("/main.jsp")){%>active<%}%>"">
 	        <a class="nav-link" href="/notice/main.jsp">Main</a>
 	      </li>
 	      
+	      <li class="nav-item <%if(path!=null&&path.startsWith("/notice.jsp")){%>active<%}%>"">
+	        <a class="nav-link" href="/notice/list.jsp">공지사항</a>
+	      </li>
+	      <li class="nav-item <%if(path!=null&&path.startsWith("/member.jsp")){%>active<%}%>"">
+	        <a class="nav-link" href="/member/list.jsp">회원관리</a>
+	      </li>
 	      <li class="nav-item dropdown">
 	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	          Dropdown
