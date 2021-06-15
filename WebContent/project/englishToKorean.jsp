@@ -9,4 +9,3 @@
 <%@page import="kr.or.kpc.util.ApiExamTranslateNmt"%>
 <%@page import="java.net.URLEncoder"%>
 <%@ page contentType="text/html;charset=utf-8"%>
-

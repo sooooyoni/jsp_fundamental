@@ -21,113 +21,133 @@
                    error : function(){},
                    success : function(json){
                 	   let rowArray = json.RealtimeCityAir.row;
+                	   let MSRSTE_NM;
+                	   let PM10;
+                	   let PM25;
+                	   let IDEX_NM;
                 	   for(const row of rowArray){
-                		   let MSRSTE_NM = row.MSRSTE_NM;
-                		   let PM10 = row.PM10;
-                		   let PM25 = row.PM25;
-                		   let IDEX_NM = row.IDEX_NM;
+                		   MSRSTE_NM = row.MSRSTE_NM;
+                		   PM10 = row.PM10;
+                		   PM25 = row.PM25;
+                		   IDEX_NM = row.IDEX_NM;
                 		   if($("#dist option:selected").text() == MSRSTE_NM){
-               		   		$('#sel').append(" 미세먼지 농도 :  "+PM10+" 초미세먼지 농도 : "
+               		   			$('#sel').append(" 미세먼지 농도 :  "+PM10+" 초미세먼지 농도 : "
                		   						+PM25+" 대기 상태 : "+IDEX_NM);
-               		   		break;
+               		   			break;
                		   		}
                 	   }
+                	   if(IDEX_NM == "좋음"){
+                		   $('#sel2').append("쾌적합니다. 마음껏 외출하셔도 괜찮은데 마스크! 잊지마세요~");
+                	   }
+                	   else	if(IDEX_NM == "보통"){
+                		   $('#sel2').append("대기질은 양호하나, 일부 대기오염 민감군에 영향을 줄 수 있습니다.");
+						}
+                	   else if(IDEX_NM == "나쁨"){
+                		   $('#sel2').append("건강한 일반인에서 대기오염으로 인한 경미한 반응이 나타나며, <br>민감군에 미치는 영향은 좀 더 클 수 있습니다.");
+                	   }
+                	   else if(IDEX_NM == "매우 나쁨"){
+                		   $('#sel2').append("건강한 일반인에서 대기오염으로 인한 경미한 반응이 나타나며, <br>민감군에 미치는 영향은 좀 더 클 수 있습니다.");
+                	   }
+                	   else if(IDEX_NM == "위험"){
+                		   $('#sel2').append("건강한 일반인에서 대기오염으로 인한 건강상의 심각한 반응이 나타날 수 있습니다.");
+                	   }
                    }
-               });
-               
-            });
-        });
-    </script>
-    <script src = "http://openapi.seoul.go.kr:8088/715142614f7170613131326449687761/json/RealtimeCityAir/1/25?call=test"></script>
-  <style>
+         	 });
+		});
+     });
+</script>
+<script src = "http://openapi.seoul.go.kr:8088/715142614f7170613131326449687761/json/RealtimeCityAir/1/25?call=test"></script>
+ <style>
 	.Nav {
-	  max-width: 980px;
-	  margin: 0 auto;
-	  overflow: visible
-	}
-	.wrapper {
-	  height: 5vh;
-	}
-	
-	body {
-	  margin: 0;
-	}
-	
-	nav {
-	  height: 44px;
-	 
-	  rgba:(0,0,0,0.5)
-	}
-	
-	nav ul {
-	  display: flex;
-	  height: 44px;
-	  justify-content: space-around;
-	  align-items: center;
-	  padding: 0;
-	  margin: 0 auto;
-	  list-style-type: none;
-	}
-	
-	nav li {}
-	
-	nav a {
-	  display: block;
-	  color:green;
-	  font-size: 20px;
-	  font-family:fantasy;
-	  font-weight: lighter;
-	  text-decoration: none;
-	  transition: 0.3s;
-	}
-	
-	nav a:hover {
-	  color: #B8B8B8;
-	}
-	
-	.appleNav {
-	  max-width: 980px;
-	  margin: 0 auto;
-	}
-	.breadcrumb-item{
-	color: white;
-	font-family:fantasy;
-	font-size: 20px;
-	}
-	
-	
-	.text{
-	position: relative;
-	text-align:left;
-	font-family: 'Gaegu', cursive;
-	top: 3%;
-	font-size : 53px;
-	}
-	
+     max-width: 980px;
+     margin: 0 auto;
+     overflow: visible
+   }
+   .wrapper {
+     height: 5vh;
+   }
+   
+   body {
+     margin: 0;
+   }
+   
+   nav {
+     height: 44px;
+    
+     rgba:(0,0,0,0.5)
+   }
+   
+   nav ul {
+     display: flex;
+     height: 44px;
+     justify-content: space-around;
+     align-items: center;
+     padding: 0;
+     margin: 0 auto;
+     list-style-type: none;
+   }
+   
+   nav li {}
+   
+   nav a {
+     display: block;
+     color:green;
+     font-size: 20px;
+     font-family:fantasy;
+     font-weight: lighter;
+     text-decoration: none;
+     transition: 0.3s;
+   }
+   
+   nav a:hover {
+     color: #B8B8B8;
+   }
+   
+   .appleNav {
+     max-width: 980px;
+     margin: 0 auto;
+   }
+   .breadcrumb-item{
+   color: white;
+   font-family:fantasy;
+   font-size: 20px;
+   }
+   
+   
+   .text{
+   position: relative;
+   text-align:left;
+   font-family: 'Gaegu', cursive;
+   top: 3%;
+   font-size : 53px;
+   }
+   
 	#btn{
-	  margin: 0;
-	  position: absolute;
-	  border-radius: 12px;
-	  top: 16%;
-	  left: 50%;
-	  -ms-transform: translate(-50%, -50%);
-	  transform: translate(-50%, -50%);
-	font-family: 'Gaegu', cursive;
-	  background-color: white;
-	color:green;
-	  font-size:20px;
-	  href="#";
-	  width:70px;
-	}
-	
-	#address{
-	position:relative;
-	
+	    margin: 0;
+	    position: absolute;
+	    border-radius: 12px;
+	    top:68% ;
+	    left: 43%;
+	   	font-family: 'Gaegu', cursive;
+	    background-color: white;
+	   	color:green;
+	    font-size:20px;
+	    width:70px;
+	   }
+   
+   #btn:hover{
+	background-color:green; 
+	color: white; 
+	 box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 	}
 	
 	h3{
-	font-family: 'Gaegu', cursive;
-	}
+   		font-family: 'Gaegu', cursive;
+   }
+
+   #address{
+   		position:relative;
+   }
 </style>
   </head>
 <body>
@@ -135,12 +155,12 @@
   <nav>
     <div class="Nav">
       <ul>
-        <li><a href="/project/program.jsp">Park Recommendation?</a></li>
-        <li><a href="/project/park.jsp">Program</a></li>
-         <li><a href="/notice/list.jsp">Notice</a></li>
+        <li><a href="program.jsp">HOME</a></li>
+        <li><a href="park.jsp">PARK</a></li>
+         <li><a href="list.jsp">SUGGESTION</a></li>
         <li class="nav-item dropdown">
 	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	         Exercise
+	         EXERCISE
 	        </a>
 	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 	          <a class="dropdown-item" href="upper.jsp">상체운동</a>

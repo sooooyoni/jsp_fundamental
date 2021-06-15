@@ -15,22 +15,32 @@ try{
 }
 %>
   <!-- breadcrumb start -->
-
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="/notice/index.jsp">홈</a></li>
-    <li class="breadcrumb-item"><a href="/notice/list.jsp">공지사항</a></li>
-  </ol>
-</nav>
-  
+	<nav aria-label="breadcrumb">
+	 <ol class="breadcrumb" style="background-color: green">
+    <li class="breadcrumb-item"><a href="program.jsp" style="color:white">Home > </a></li>
+    <li class="breadcrumb-item" style="color:white">Suggestion </a></li>
+	  </ol>
+	</nav>
   <!-- breadcrumb end -->
-  <!-- container start -->
+  	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Gaegu&display=swap" rel="stylesheet">
+<style>
+
+
+h5{
+font-family: 'Gaegu', cursive;
+		}		
+</style>
+
+  <!-- container start -->	
     <div class="container">
     	
   <!-- col start -->
  	<div class="row">
     	<div class="col-md-12">
-    		<h6>공지사항 글쓰기</h6>
+    	<br>
+    		<h5>건의사항 글쓰기</h>
     		<%--form start --%>
     		
     		<form name="noticeForm" method="post" action="saveDb.jsp">

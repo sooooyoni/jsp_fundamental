@@ -112,9 +112,9 @@
 	  left: 50%;
 	  -ms-transform: translate(-50%, -50%);
 	  transform: translate(-50%, -50%);
-	font-family: 'Gaegu', cursive;
+	  font-family: 'Gaegu', cursive;
 	  background-color: white;
-	color:green;
+	  color:green;
 	  font-size:20px;
 	  href="#";
 	  width:70px;

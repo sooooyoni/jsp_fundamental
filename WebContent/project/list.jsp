@@ -5,6 +5,8 @@
 <%@ page pageEncoding="utf-8" %>
 <%@ include file="header.jsp" %>
 <%
+
+
 	String tempPage = request.getParameter("page");
 	int cPage = 0;
 	if(tempPage== null || tempPage.length()==0){
@@ -16,15 +18,7 @@
 		cPage = 1;
 	}
 	
-	/*
-	cPage = 1   -> 0  , 10;
-	cPage = 2   -> 10 , 10;
-	cPage = 3   -> 20 , 10;
-	start = 0, 10 20   , displayCount : 10
-	An = a1 + (n-1)*d  
-		-> a1 : 0 , n->cPage , d : displayCount		
 	
-	*/
 	int displayCount = 4;
 	int pageDispalyCount = 3;
 	int totalRows = 0;//128
@@ -40,89 +34,26 @@
 	
 %>
   	<!-- breadcrumb start -->
-
   	
   	<nav aria-label="breadcrumb">
 	 <ol class="breadcrumb" style="background-color: green">
-    <li class="breadcrumb-item"><a href="/project/index.jsp" style="color:white">Home > </a></li>
-    <li class="breadcrumb-item"><a href="/project/index.jsp" style="color:white">Notice </a></li>
+    <li class="breadcrumb-item"><a href="program.jsp" style="color:white"> Back  </a></li>
+    <li class="breadcrumb-item">Suggestion </li>
 	  </ol>
 	</nav>
 	<!-- breadcrumb end -->
-  	
-  	<!-- container start -->
-	<div class="container">
-		<!-- col start -->
-		<div class="row">
-				<h1></h1>
-			</div>
-		</div>
-		<!-- col end -->
-		<link rel="preconnect" href="https://fonts.gstatic.com">
-	
-	<!-- container end -->
+
+
+<link href="https://fonts.googleapis.com/css2?family=Gaegu&display=swap" rel="stylesheet">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com">
-		<link href="https://fonts.googleapis.com/css2?family=Gaegu&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
 		<style>
-		.text{
-		text-align:center;
+		h5{
 		font-family: 'Gaegu', cursive;
-		top: 55%;
-		font-size : 53px;
-		}
-		#carouselExampleIndicators{
-		 margin: 0;
-		  position: absolute;
-		  border-radius: 12px;
-		 top: 55%;
-		  left: 50%;
-		  -ms-transform: translate(-50%, -50%);
-		  transform: translate(-50%, -50%);
-		}
-		.button {
-		  margin: 0;
-		  position: absolute;
-		  border-radius: 12px;
-		  top: 110%;
-		  left: 50%;
-		  -ms-transform: translate(-50%, -50%);
-		  transform: translate(-50%, -50%);
-		font-family: 'Gaegu', cursive;
-		  background-color: white;
-		color:green;
-		  font-size:40px;
-		  href="/notice/main.jsp";
-		  width:400px;
-		
-		}
-		.button span {
-		  cursor: pointer;
-		  display: inline-block;
-		  position: relative;
-		  transition: 0.5s;
-		}
-		.button span:after {
-		  content: '\00bb';
-		  position: absolute;
-		  opacity: 0;
-		  top: 0;
-		  right: -20px;
-		  transition: 0.5s;
-		}
-		.button:hover{
-		background-color:green; 
-		color: white; 
-		 box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-		}
-		.button:hover span {
-		  padding-right: 25px;
-		}
-		
-		.button:hover span:after {
-		  opacity: 1;
-		  right: 0;
-		
+		}		
+	.title{
+	color:black
+	}
 		</style>	
 	
   	
@@ -132,7 +63,8 @@
 		<div class="row">
 			<div class="col-md-12">
 				<%-- table start --%>
-				<h5>공지사항 리스트</h5>
+				<br>
+				<h5>건의사항 리스트</h5>
 				<div class="table-responsive">
 				<table class="table table-hover">
 				  <colgroup>
@@ -157,7 +89,7 @@
 				    <tr>
 				      <th scope="row"><%=dto.getNum() %></th>
 				      <td><%=dto.getWriter() %></td>
-				      <td><a href="view.jsp?num=<%=dto.getNum()%>&page=<%=cPage%>"><%=dto.getTitle() %></a></td>
+				      <td><a class="title" href="view.jsp?num=<%=dto.getNum()%>&page=<%=cPage%>"><%=dto.getTitle() %></a></td>
 				      <td><%=dto.getRegdate() %></td>
 				    </tr>
 				  <%	
@@ -172,11 +104,7 @@
 				</table>
 				<%--Pagination start --%>
 	<%
-		/*
-			총 rows 128개, displayCount 10개 가정
-			Previous 1 2 3 4 5 6 7 8 9 10 Next => currentBlock : 1 block
-			Previous 11 12 13 Next			   => currentBlock : 2 block
-		*/
+
 		totalRows = dao.getRows();//128
 		
 		if(totalRows%displayCount==0){
@@ -185,28 +113,11 @@
 			totalPage = totalRows/displayCount + 1;
 		}
 		
-		/*
-		totalPage = (totalRows%displayCount==0) ? 
-					totalRows/displayCount : 
-					totalRows/displayCount + 1 ;
-		*/
+	
 		if(totalPage == 0){
 			totalPage = 1;
 		}
-		/*
-		totalPage : 13
-		      
-		cPage : 1-10  -> currentBlock : 1, pageDisplayCount : 10
-		cPage : 11-13 -> currentBlock : 2, pageDisplayCount : 10
-		totalBlock = 2 
-		....
-		totalPage : 13
-		cPage : 1-5  -> currentBlock : 1, pageDisplayCount : 5
-		cPage : 6-10 -> currentBlock : 2, pageDisplayCount : 5
-		cPage : 11-13 -> currentBlock : 3, pageDisplayCount : 5
-		totalBlock = 3 
-		....
-		*/
+
 		if(cPage%pageDispalyCount == 0){
 			currentBlock = cPage/pageDispalyCount;
 		}else {
@@ -218,13 +129,7 @@
 		}else {
 			totalBlock = totalPage/pageDispalyCount +1;
 		}
-		/*
-		cPage : 1-10  -> currentBlock : 1
-		cPage : 11-20 -> currentBlock : 2
-		.....
-		startPage : 1, 11, 20
-		endPage : 10, 20, 30
-		*/
+	
 		startPage = 1 + (currentBlock -1)*pageDispalyCount;
 		endPage = pageDispalyCount + (currentBlock -1)*pageDispalyCount;
 		
